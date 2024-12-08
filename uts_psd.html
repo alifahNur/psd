@@ -1,0 +1,2455 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Judul : Analisis Historis Harga Saham dengan Pendekatan Data Univariate: Studi Kasus Saham ICBP &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'uts_psd';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="BAB I PENDAHULUAN" href="tugas1_LaporanMemahamiBisnis.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tugas1_LaporanMemahamiBisnis.html">BAB I PENDAHULUAN</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Judul : Analisis Historis Harga Saham dengan Pendekatan Data Univariate: Studi Kasus Saham ICBP</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Futs_psd.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/uts_psd.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Judul : Analisis Historis Harga Saham dengan Pendekatan Data Univariate: Studi Kasus Saham ICBP</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan">Tujuan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumusan-masalah">Rumusan Masalah</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat">Manfaat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan">Penjelasan:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-grafik">Penjelasan Grafik:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-dari-grafik">Analisis dari Grafik:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-bagian-box-plot">Bagian-Bagian Box Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-box-plot">Kelebihan Box Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-sliding-window">Konsep Sliding Window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-sliding-window">Aplikasi Sliding Window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keuntungan-dan-kerugian">Keuntungan dan Kerugian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-logistic-regression">Apa itu Logistic Regression?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-dalam-prediksi-menggunakan-logistic-regression">Langkah-langkah dalam Prediksi Menggunakan Logistic Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-dan-kekurangan">Kelebihan dan Kekurangan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan">Kelebihan:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kekurangan">Kekurangan:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi">Aplikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-lstm">Apa itu LSTM?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komponen-utama-lstm">Komponen Utama LSTM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-lstm-dalam-prediksi">Cara Kerja LSTM dalam Prediksi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-dalam-membangun-model-lstm">Langkah-langkah dalam Membangun Model LSTM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-dan-kekurangan-lstm">Kelebihan dan Kekurangan LSTM</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kelebihan:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Kekurangan:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-lstm">Aplikasi LSTM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagaimana-bagging-bekerja">Bagaimana Bagging Bekerja:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-bagging">Manfaat Bagging:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-algoritma-yang-menggunakan-bagging">Contoh Algoritma yang Menggunakan Bagging:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapan-menggunakan-bagging">Kapan Menggunakan Bagging:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ilustrasi-sederhana-bagging">Ilustrasi Sederhana Bagging:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-bagging">1. <strong>Pengertian Bagging</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-bagging-regressor">2. <strong>Cara Kerja Bagging Regressor</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keunggulan-bagging-regressor">3. <strong>Keunggulan Bagging Regressor</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi">4. <strong>Implementasi</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6. <strong>Kesimpulan</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-rmse-penting">Mengapa RMSE Penting?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi">Interpretasi:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="judul-analisis-historis-harga-saham-dengan-pendekatan-data-univariate-studi-kasus-saham-icbp">
+<h1>Judul : Analisis Historis Harga Saham dengan Pendekatan Data Univariate: Studi Kasus Saham ICBP<a class="headerlink" href="#judul-analisis-historis-harga-saham-dengan-pendekatan-data-univariate-studi-kasus-saham-icbp" title="Link to this heading">#</a></h1>
+<p>##Pendahuluan</p>
+<p>Harga saham merupakan salah satu indikator penting dalam dunia investasi dan keuangan, yang dapat memberikan gambaran mengenai kondisi perusahaan serta ekspektasi pasar terhadap kinerja perusahaan tersebut. Analisis harga saham secara historis dapat memberikan wawasan yang berguna bagi investor dalam membuat keputusan. Dalam penelitian ini, kami melakukan analisis univariate terhadap data historis harga saham ICBP (PT Indofood CBP Sukses Makmur Tbk) untuk mengidentifikasi pola, distribusi, dan variabilitas harga saham dari waktu ke waktu. Dengan menggunakan statistik deskriptif, seperti rata-rata, median, kuartil, dan standar deviasi, kami mencoba memahami bagaimana harga saham ICBP berfluktuasi dalam periode tertentu.</p>
+<section id="tujuan">
+<h2>Tujuan<a class="headerlink" href="#tujuan" title="Link to this heading">#</a></h2>
+<p>Tujuan dari penelitian ini adalah untuk:</p>
+<ol class="arabic simple">
+<li><p>Menganalisis distribusi harga saham ICBP dari data historis yang tersedia.</p></li>
+<li><p>Mengidentifikasi pola dan tren harga saham dalam periode tertentu.</p></li>
+<li><p>Menggunakan pendekatan univariate untuk menilai tingkat variabilitas dan penyebaran harga saham.</p></li>
+<li><p>Menyediakan wawasan yang dapat digunakan oleh investor dalam pengambilan keputusan investasi.</p></li>
+</ol>
+</section>
+<section id="rumusan-masalah">
+<h2>Rumusan Masalah<a class="headerlink" href="#rumusan-masalah" title="Link to this heading">#</a></h2>
+<p>Beberapa masalah utama yang akan dijawab dalam penelitian ini adalah:</p>
+<ol class="arabic simple">
+<li><p>Bagaimana distribusi harga saham ICBP dari data historis yang tersedia?</p></li>
+<li><p>Apakah terdapat pola atau tren yang jelas pada pergerakan harga saham ICBP?</p></li>
+<li><p>Bagaimana tingkat variabilitas harga saham ICBP diukur melalui ukuran statistik seperti standar deviasi dan rentang interkuartil?</p></li>
+<li><p>Apakah harga saham cenderung meningkat, menurun, atau stabil dalam periode tertentu?</p></li>
+</ol>
+</section>
+<section id="manfaat">
+<h2>Manfaat<a class="headerlink" href="#manfaat" title="Link to this heading">#</a></h2>
+<p>Manfaat dari penelitian ini adalah sebagai berikut:</p>
+<ul class="simple">
+<li><p>Bagi Investor: Memberikan informasi yang lebih mendalam mengenai pola harga saham yang dapat digunakan untuk membuat keputusan investasi yang lebih baik.</p></li>
+<li><p>Bagi Akademisi: Menyediakan contoh konkret penerapan analisis univariate dalam dunia keuangan, khususnya dalam analisis harga saham.</p></li>
+<li><p>Bagi Perusahaan: Memahami bagaimana harga saham mereka dipandang oleh pasar, serta faktor-faktor yang mempengaruhi fluktuasi harga saham dari waktu ke waktu.</p></li>
+</ul>
+<p>#Data Univariate
+Data univariate adalah jenis data yang hanya memiliki satu variabel atau satu fitur. Dalam konteks statistik atau analisis data, “univariate” mengacu pada situasi di mana kita hanya mengamati atau menganalisis satu aspek atau atribut dari suatu dataset.</p>
+<p>Ciri-ciri Data Univariate:</p>
+<ul class="simple">
+<li><p>Satu variabel: Hanya ada satu variabel yang diukur atau dianalisis. Misalnya, jika kita ingin menganalisis tinggi badan dari sekelompok orang, tinggi badan adalah satu-satunya variabel yang dianalisis.</p></li>
+<li><p>Tujuan: Fokusnya biasanya pada analisis distribusi data, misalnya untuk melihat mean (rata-rata), median, modus, variasi, dispersi (rentang, variansi, standar deviasi), atau outlier (nilai yang jauh dari nilai lainnya).</p></li>
+<li><p>Grafik: Grafik yang sering digunakan untuk analisis univariate meliputi histogram, box plot, atau bar chart.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>  <span class="c1"># Pastikan ini diimpor</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Membaca data saham</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;icbp.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mengubah kolom Date menjadi format datetime dan set index Date</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Menggunakan kolom &#39;Close&#39; sebagai contoh untuk time series</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Ukuran jendela (window)</span>
+<span class="n">window_size</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-2-d83d95145d0b&gt;</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Membaca data saham</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;icbp.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Mengubah kolom Date menjadi format datetime dan set index Date</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span>     <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1025</span> 
+<span class="ne">-&gt; </span><span class="mi">1026</span>     <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1027</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1028</span> 
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">618</span> 
+<span class="g g-Whitespace">    </span><span class="mi">619</span>     <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span>     <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">621</span> 
+<span class="g g-Whitespace">    </span><span class="mi">622</span>     <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1618</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1619</span>         <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1621</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1622</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py</span> in <span class="ni">_make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1878</span>                 <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1879</span>                     <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1880</span>             <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1881</span>                 <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1882</span>                 <span class="n">mode</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/pandas/io/common.py</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>         <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>             <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">873</span>             <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">874</span>                 <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">875</span>                 <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;icbp.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Menampilkan statistik dasar</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Statistik dasar untuk harga penutupan (Close):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statistik dasar untuk harga penutupan (Close):
+count     4890.000000
+mean      3690.623722
+std       3592.694441
+min        275.000000
+25%        475.000000
+50%       2225.000000
+75%       6859.375000
+max      12400.000000
+Name: Close, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Berikut adalah penjelasan dari output statistik dasar harga penutupan (<strong>Close</strong>) yang dihasilkan oleh metode <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>:</p>
+<ol class="arabic simple">
+<li><p><strong>count: 4890</strong> : menunjukkan jumlah total pengamatan dalam kolom <strong>Close</strong>, yaitu 4.890 data. Artinya, ada 4.890 hari di mana harga penutupan tercatat dalam dataset ini.</p></li>
+<li><p><strong>mean: 3690.623722</strong> : nilai rata-rata dari semua harga penutupan dalam dataset. Rata-rata dihitung dengan menjumlahkan semua nilai dan membaginya dengan jumlah pengamatan (4890).</p></li>
+<li><p><strong>std: 3592.694441</strong></p>
+<ul class="simple">
+<li><p><strong>Standar deviasi (std)</strong> adalah 3.592,69. Standar deviasi mengukur seberapa jauh nilai-nilai dalam dataset tersebar dari nilai rata-rata. Semakin besar standar deviasi, semakin besar variasi harga penutupan dari rata-ratanya.</p></li>
+</ul>
+</li>
+<li><p><strong>min: 275.000000</strong></p>
+<ul class="simple">
+<li><p><strong>Min (minimum)</strong> adalah 275. Ini adalah harga penutupan terendah yang tercatat dalam dataset. Harga penutupan saham ini tidak pernah turun di bawah 275.</p></li>
+</ul>
+</li>
+<li><p><strong>25%: 475.000000</strong></p>
+<ul class="simple">
+<li><p><strong>25% percentile (kuartil pertama)</strong> menunjukkan bahwa 25% dari harga penutupan berada di bawah 475. Ini berarti seperempat dari data memiliki harga penutupan lebih rendah dari 475, dan sisanya lebih tinggi.</p></li>
+</ul>
+</li>
+<li><p><strong>50%: 2225.000000</strong></p>
+<ul class="simple">
+<li><p><strong>Median (50% percentile atau kuartil kedua)</strong> adalah 2.225. Median adalah nilai tengah dari dataset ketika data diurutkan dari yang terkecil hingga terbesar. Ini menunjukkan bahwa setengah dari harga penutupan berada di bawah 2.225, dan setengahnya lagi di atas nilai ini. Median sering digunakan sebagai ukuran pusat yang tidak terpengaruh oleh outlier.</p></li>
+</ul>
+</li>
+<li><p><strong>75%: 6859.375000</strong></p>
+<ul class="simple">
+<li><p><strong>75% percentile (kuartil ketiga)</strong> menunjukkan bahwa 75% dari harga penutupan berada di bawah 6.859,38. Hanya 25% dari data yang memiliki harga penutupan lebih tinggi dari 6.859,38.</p></li>
+</ul>
+</li>
+<li><p><strong>max: 12400.000000</strong></p>
+<ul class="simple">
+<li><p><strong>Max (maksimum)</strong> adalah 12.400. Ini adalah harga penutupan tertinggi yang tercatat dalam dataset. Artinya, harga saham ini pernah mencapai puncak 12.400.</p></li>
+</ul>
+</li>
+</ol>
+<section id="kesimpulan">
+<h3>Kesimpulan:<a class="headerlink" href="#kesimpulan" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Harga penutupan bervariasi dengan sangat luas, dari 275 hingga 12.400.</p></li>
+<li><p>Ada perbedaan besar antara kuartil pertama (475) dan kuartil ketiga (6.859,38), menunjukkan bahwa distribusi harga penutupan sangat tidak simetris.</p></li>
+<li><p>Rata-rata (mean) adalah 3.690,62, tetapi karena median (2.225) lebih rendah dari rata-rata, hal ini menunjukkan bahwa distribusi harga penutupan condong ke kanan (<strong>skewed right</strong>), kemungkinan disebabkan oleh beberapa nilai harga yang sangat tinggi.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Moving average (rata-rata bergerak)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Moving_Avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="n">window_size</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="c1"># Menampilkan 10 baris pertama dengan kolom Moving_Avg</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span> <span class="s1">&#39;Moving_Avg&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>            Close  Moving_Avg
+Date                         
+2000-10-02  420.0         NaN
+2000-10-03  395.0         NaN
+2000-10-04  387.5         NaN
+2000-10-05  395.0         NaN
+2000-10-06  387.5       397.0
+2000-10-09  377.5       388.5
+2000-10-10  375.0       384.5
+2000-10-11  385.0       384.0
+2000-10-12  390.0       383.0
+2000-10-13  395.0       384.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pada output yang Anda tampilkan, kolom <strong><code class="docutils literal notranslate"><span class="pre">Moving_Avg</span></code></strong> menunjukkan nilai rata-rata bergerak (moving average) dengan ukuran jendela 5 hari untuk kolom <strong><code class="docutils literal notranslate"><span class="pre">Close</span></code></strong>. Mari kita jelaskan bagian-bagian dari output tersebut:</p>
+</section>
+<section id="penjelasan">
+<h3>Penjelasan:<a class="headerlink" href="#penjelasan" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Nilai <code class="docutils literal notranslate"><span class="pre">NaN</span></code> di Moving_Avg:</strong></p>
+<ul class="simple">
+<li><p>Untuk baris pada tanggal <strong>2000-10-02</strong> hingga <strong>2000-10-05</strong>, nilai pada kolom <strong><code class="docutils literal notranslate"><span class="pre">Moving_Avg</span></code></strong> adalah <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (Not a Number). Ini karena rata-rata bergerak dengan ukuran jendela <strong>5 hari</strong> tidak dapat dihitung sampai Anda memiliki setidaknya <strong>5 data</strong> harga penutupan sebelumnya.</p></li>
+<li><p>Pada tanggal <strong>2000-10-06</strong>, jumlah data sudah mencapai 5 hari, sehingga nilai moving average mulai dihitung.</p></li>
+</ul>
+</li>
+<li><p><strong>Perhitungan Moving Average:</strong></p>
+<ul class="simple">
+<li><p>Pada <strong>2000-10-06</strong>, nilai rata-rata bergerak untuk 5 hari dihitung dari data harga penutupan selama lima hari sebelumnya (2000-10-02 hingga 2000-10-06):</p></li>
+</ul>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\text{Moving_Avg} = \frac{420.0 + 395.0 + 387.5 + 395.0 + 387.5}{5} = 397.0
+\]</div>
+<ul class="simple">
+<li><p>Pada <strong>2000-10-09</strong>, moving average dihitung dari periode 2000-10-03 hingga 2000-10-09:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\text{Moving_Avg} = \frac{395.0 + 387.5 + 395.0 + 387.5 + 377.5}{5} = 388.5
+\]</div>
+<ul class="simple">
+<li><p>Perhitungan moving average ini terus bergeser setiap hari, dengan hanya menggunakan 5 data terakhir dari harga penutupan untuk menghitung rata-ratanya.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Contoh lain (Moving Average pada 2000-10-13):</strong></p>
+<ul class="simple">
+<li><p>Moving average pada tanggal <strong>2000-10-13</strong> dihitung dari 5 harga penutupan sebelumnya (2000-10-09 hingga 2000-10-13):</p></li>
+</ul>
+</li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\text{Moving_Avg} = \frac{377.5 + 375.0 + 385.0 + 390.0 + 395.0}{5} = 384.5
+\]</div>
+</section>
+<section id="id1">
+<h3>Kesimpulan:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Nilai <code class="docutils literal notranslate"><span class="pre">NaN</span></code> di awal</strong> wajar karena belum cukup data untuk menghitung moving average.</p></li>
+<li><p>Setelah ada 5 data harga penutupan, moving average dihitung dengan menggunakan <strong>5 harga penutupan terakhir</strong>.</p></li>
+<li><p>Nilai <strong>Moving Average</strong> memperlihatkan <strong>rata-rata pergerakan harga penutupan</strong> selama 5 hari terakhir, yang membantu mengidentifikasi tren jangka pendek.</p></li>
+</ul>
+<p>Moving average ini berguna untuk melihat tren dan mengurangi fluktuasi jangka pendek dalam data saham.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Visualisasi harga penutupan dan moving average</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Harga Penutupan (Close)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Moving_Avg&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Moving Average (</span><span class="si">{</span><span class="n">window_size</span><span class="si">}</span><span class="s1"> hari)&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Harga Penutupan dan moving average&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tanggal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Harga Penutupan&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7f3ad116bd1417935a0c90f97fbdff5a3bab8739377c1d1fa5a186b0565c3a1b.png" src="_images/7f3ad116bd1417935a0c90f97fbdff5a3bab8739377c1d1fa5a186b0565c3a1b.png" />
+</div>
+</div>
+<p>Grafik yang dilampirkan menunjukkan hubungan antara <strong>harga penutupan saham (Close)</strong> dan <strong>moving average (rata-rata bergerak)</strong> selama periode waktu tertentu.</p>
+</section>
+<section id="penjelasan-grafik">
+<h3>Penjelasan Grafik:<a class="headerlink" href="#penjelasan-grafik" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Sumbu Y (Harga Penutupan)</strong>:</p>
+<ul class="simple">
+<li><p>Sumbu vertikal menunjukkan harga penutupan saham dalam satuan mata uang, yang berkisar dari <strong>0 hingga 12.000</strong>.</p></li>
+<li><p>Harga penutupan meningkat secara signifikan dari tahun 2000 hingga mendekati tahun 2020.</p></li>
+</ul>
+</li>
+<li><p><strong>Sumbu X (Tanggal)</strong>:</p>
+<ul class="simple">
+<li><p>Sumbu horizontal menunjukkan <strong>waktu</strong> (tanggal), dimulai dari sekitar <strong>tahun 2000 hingga mendekati 2020</strong>.</p></li>
+<li><p>Grafik memperlihatkan perubahan harga saham dan moving average dalam rentang waktu hampir 20 tahun.</p></li>
+</ul>
+</li>
+<li><p><strong>Garis Biru (Harga Penutupan / Close)</strong>:</p>
+<ul class="simple">
+<li><p>Garis biru adalah representasi dari <strong>harga penutupan saham</strong> setiap harinya.</p></li>
+<li><p>Ada <strong>fluktuasi yang cukup besar</strong>, terutama di tahun-tahun terakhir (setelah 2010), dengan lonjakan besar di beberapa periode (misalnya sekitar 2016 dan mendekati 2020).</p></li>
+</ul>
+</li>
+<li><p><strong>Garis Oranye (Moving Average 5 Hari)</strong>:</p>
+<ul class="simple">
+<li><p>Garis oranye adalah <strong>moving average</strong> untuk jangka waktu <strong>5 hari</strong>, yang membantu memperhalus fluktuasi harga saham.</p></li>
+<li><p>Garis moving average bergerak lebih halus dibandingkan dengan garis harga penutupan, karena menghitung rata-rata 5 hari sebelumnya untuk setiap titik data.</p></li>
+<li><p>Garis ini mengikuti tren harga penutupan, tetapi karena ini rata-rata bergerak, sedikit tertunda dalam merespons perubahan yang sangat mendadak.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="analisis-dari-grafik">
+<h3>Analisis dari Grafik:<a class="headerlink" href="#analisis-dari-grafik" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Tren jangka panjang</strong> menunjukkan bahwa harga saham mengalami kenaikan yang signifikan dari sekitar tahun 2008 hingga 2020. Ada beberapa periode penurunan besar, seperti di tahun <strong>2016</strong> dan di sekitar <strong>2020</strong>, yang juga terlihat dalam moving average.</p></li>
+<li><p><strong>Moving average</strong> lebih halus daripada harga penutupan karena ia meratakan lonjakan dan penurunan jangka pendek, memberikan gambaran yang lebih jelas tentang <strong>tren jangka menengah</strong>.</p></li>
+<li><p>Grafik ini berguna untuk melihat pola besar dalam pergerakan harga saham dan mengurangi dampak dari fluktuasi harian yang bisa mengaburkan tren jangka panjang.</p></li>
+</ul>
+<p>Secara keseluruhan, grafik ini menunjukkan bahwa meskipun harga penutupan saham berfluktuasi setiap hari, tren keseluruhan menunjukkan peningkatan yang stabil selama periode waktu yang cukup panjang, dengan beberapa periode koreksi atau penurunan harga.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4. Histogram untuk melihat distribusi data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribusi Harga Penutupan Saham&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Harga Penutupan&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frekuensi&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/694255b93a46a6aa0613ef617aeb0140f472f19fc933a884b06d285c3e424a91.png" src="_images/694255b93a46a6aa0613ef617aeb0140f472f19fc933a884b06d285c3e424a91.png" />
+</div>
+</div>
+<p><strong>1. Analisis Histogram:</strong></p>
+<ul class="simple">
+<li><p>Frekuensi Harga Rendah Lebih Tinggi:
+Bar pertama yang mewakili harga penutupan antara 0 hingga 2000 memiliki frekuensi tertinggi. Ini menunjukkan bahwa sebagian besar harga penutupan berada di rentang yang relatif rendah, sekitar 0 hingga 2000.
+Sebaran Harga Penutupan:</p></li>
+<li><p>Setelah bin pertama, frekuensi harga penutupan mulai menurun. Namun, ada beberapa bar yang menonjol di sekitar rentang 6000-8000 dan 8000-10000, menunjukkan bahwa harga penutupan juga sering berada pada rentang tersebut, meskipun tidak sebanyak pada harga rendah.
+Harga penutupan di atas 10.000 terjadi sangat jarang, terlihat dari bar yang jauh lebih kecil pada rentang harga tersebut.</p></li>
+</ul>
+<p><strong>2. Distribusi Positif Skewed:</strong></p>
+<ul class="simple">
+<li><p>Histogram ini menunjukkan distribusi yang miring ke kanan (positively skewed). Sebagian besar harga penutupan berada di kisaran rendah (di bawah 2000), dengan beberapa harga yang lebih tinggi dalam jumlah yang lebih sedikit.</p></li>
+</ul>
+<p>Kesimpulan:</p>
+<ul class="simple">
+<li><p>Sebagian besar harga penutupan saham dalam dataset berada pada rentang 0 hingga 2000, yang terlihat dari frekuensi yang sangat tinggi di bin pertama.</p></li>
+<li><p>Ada juga beberapa puncak pada rentang harga yang lebih tinggi, tetapi harga penutupan yang berada di atas 8000 lebih jarang terjadi.</p></li>
+<li><p>Pola ini menunjukkan bahwa harga saham sering diperdagangkan di harga yang lebih rendah, tetapi ada beberapa periode di mana harga meningkat secara signifikan.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5. Menghitung statistik tambahan seperti variansi dan standar deviasi</span>
+<span class="n">varian</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">std_deviasi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Variansi dari harga penutupan: </span><span class="si">{</span><span class="n">varian</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Standar deviasi dari harga penutupan: </span><span class="si">{</span><span class="n">std_deviasi</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variansi dari harga penutupan: nan
+Standar deviasi dari harga penutupan: nan
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cek apakah ada nilai NaN dalam kolom harga penutupan</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Mengisi atau Menghapus Nilai NaN:</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1">#Menggunakan Assignment Langsung</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+
+<span class="c1">#Setelah memastikan tidak ada nilai NaN, coba hitung kembali:</span>
+<span class="n">variansi</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+<span class="n">std_deviasi</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Variansi: </span><span class="si">{</span><span class="n">variansi</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Standar Deviasi: </span><span class="si">{</span><span class="n">std_deviasi</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variansi: 12725254.97280664
+Standar Deviasi: 3567.247534557511
+</pre></div>
+</div>
+</div>
+</div>
+<p>##Box Plot
+<strong>Box plot</strong> (atau <em>box-and-whisker plot</em>) adalah jenis grafik yang digunakan untuk menggambarkan distribusi data melalui lima angka ringkasan, yaitu:</p>
+<ol class="arabic simple">
+<li><p><strong>Minimum</strong>: Nilai terendah dalam dataset.</p></li>
+<li><p><strong>Kuartil Pertama (Q1)</strong>: Nilai di bawah 25% dari data, yang menunjukkan batas bawah dari kuartil pertama.</p></li>
+<li><p><strong>Median (Q2)</strong>: Nilai tengah yang membagi dataset menjadi dua bagian yang sama, di mana 50% data berada di bawah nilai ini.</p></li>
+<li><p><strong>Kuartil Ketiga (Q3)</strong>: Nilai di bawah 75% dari data, yang menunjukkan batas atas dari kuartil ketiga.</p></li>
+<li><p><strong>Maksimum</strong>: Nilai tertinggi dalam dataset.</p></li>
+</ol>
+</section>
+<section id="bagian-bagian-box-plot">
+<h3>Bagian-Bagian Box Plot<a class="headerlink" href="#bagian-bagian-box-plot" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Box (Kotak)</strong>: Menggambarkan rentang interkuartil (IQR), yaitu rentang antara Q1 dan Q3. Ini menunjukkan di mana 50% dari data berada.</p></li>
+<li><p><strong>Garis di dalam Box</strong>: Ini menunjukkan nilai median (Q2) dari dataset.</p></li>
+<li><p><strong>Whiskers (Jenggot)</strong>: Garis yang memanjang dari kedua sisi kotak, yang menunjukkan rentang data di luar IQR. Whiskers biasanya diperpanjang hingga nilai maksimum dan minimum dalam batas tertentu, tetapi dapat juga menunjukkan nilai outlier.</p></li>
+<li><p><strong>Titik di luar Whiskers</strong>: Titik ini dianggap sebagai <strong>outlier</strong>, yaitu nilai yang jauh dari nilai lainnya.</p></li>
+</ul>
+</section>
+<section id="kelebihan-box-plot">
+<h3>Kelebihan Box Plot<a class="headerlink" href="#kelebihan-box-plot" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Membandingkan Distribusi</strong>: Box plot memungkinkan Anda untuk dengan mudah membandingkan distribusi beberapa kelompok data.</p></li>
+<li><p><strong>Identifikasi Outlier</strong>: Box plot secara jelas menunjukkan outlier dalam dataset.</p></li>
+<li><p><strong>Menyajikan Data Secara Ringkas</strong>: Box plot memberikan ringkasan yang jelas dari data dalam satu visualisasi.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Box Plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Box Plot Harga Penutupan&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Harga Penutupan&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Uji Normalitas (Contoh: Uji Shapiro-Wilk)</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Statistik: </span><span class="si">%.3f</span><span class="s1">, p-value: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stat</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data terdistribusi normal (gagal menolak hipotesis nol)&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data tidak terdistribusi normal (menolak hipotesis nol)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/59e29e3557a1da7e6d84ad31101aa46235e99fbbc6771c08bbb6dda48d37718a.png" src="_images/59e29e3557a1da7e6d84ad31101aa46235e99fbbc6771c08bbb6dda48d37718a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Statistik: 0.837, p-value: 0.000
+Data tidak terdistribusi normal (menolak hipotesis nol)
+</pre></div>
+</div>
+</div>
+</div>
+<p>#Preprocessing Data</p>
+<ol class="arabic simple">
+<li><p>Preprocessing data adalah langkah awal yang sangat penting dalam analisis data dan pembelajaran mesin (machine learning) yang bertujuan untuk mempersiapkan data mentah agar dapat digunakan secara efektif dalam model analisis atau algoritma. Proses ini melibatkan berbagai teknik dan langkah untuk membersihkan, mengubah, dan menyusun data sehingga siap untuk analisis lebih lanjut.</p></li>
+<li><p>Tujuan Preprocessing Data</p></li>
+</ol>
+<ul class="simple">
+<li><p>Meningkatkan Kualitas Data: Mengurangi kesalahan, kebisingan, dan inkonsistensi dalam data.</p></li>
+<li><p>Memudahkan Analisis: Membuat data lebih mudah dianalisis dan diinterpretasikan.</p></li>
+<li><p>Meningkatkan Kinerja Model: Mengoptimalkan data untuk meningkatkan akurasi dan efektivitas model pembelajaran mesin.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#mengidentifikasi dan menghapus data duplikat</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menghitung dan menampilkan jumlah nilai yang hilang</span>
+
+<span class="n">missing_values</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;jumlah missing value : &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">missing_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>jumlah missing value : 
+Open            1
+High            1
+Low             1
+Close           0
+Adj Close       1
+Volume          1
+Moving_Avg    176
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Konversi tipe data non-numerik ke tipe yang sesuai tanpa membuat salinan</span>
+<span class="n">data_numeric</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">infer_objects</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Lakukan interpolasi hanya pada kolom numerik, kecuali kolom &#39;Date&#39;</span>
+<span class="n">data_interpolated</span> <span class="o">=</span> <span class="n">data_numeric</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+
+<span class="c1"># Gabungkan kembali kolom &#39;Date&#39; dengan hasil interpolasi</span>
+<span class="n">data_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">],</span> <span class="n">data_interpolated</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Mengecek ulang apakah missing value sudah diatasi</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data_final</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-16-d7fafff4ca5b&gt;</span> in <span class="ni">&lt;cell line: 4&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Konversi tipe data non-numerik ke tipe yang sesuai tanpa membuat salinan</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">data_numeric</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">infer_objects</span><span class="p">(</span><span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Lakukan interpolasi hanya pada kolom numerik, kecuali kolom &#39;Date&#39;</span>
+
+<span class="ne">AttributeError</span>: &#39;numpy.ndarray&#39; object has no attribute &#39;infer_objects&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#normalisasi</span>
+
+<span class="c1"># Inisialisasi MinMaxScaler</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">()</span>
+
+<span class="c1"># Kolom yang akan dinormalisasi</span>
+<span class="n">cols_to_normalize</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span> <span class="s1">&#39;High&#39;</span><span class="p">,</span> <span class="s1">&#39;Low&#39;</span><span class="p">,</span> <span class="s1">&#39;Close&#39;</span><span class="p">,</span> <span class="s1">&#39;Adj Close&#39;</span><span class="p">,</span> <span class="s1">&#39;Volume&#39;</span><span class="p">]</span>
+
+<span class="c1"># Melakukan normalisasi</span>
+<span class="n">df</span><span class="p">[</span><span class="n">cols_to_normalize</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">cols_to_normalize</span><span class="p">])</span>
+
+<span class="c1"># Menampilkan data setelah dinormalisasi</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                Open      High       Low     Close  Adj Close    Volume  \
+Date                                                                      
+2000-10-02  0.012270  0.012424  0.014953  0.011959   0.008713  0.058207   
+2000-10-03  0.011861  0.012016  0.013084  0.009897   0.007211  0.115757   
+2000-10-04  0.009816  0.009776  0.011215  0.009278   0.006760  0.206228   
+2000-10-05  0.008998  0.010183  0.012253  0.009897   0.007211  0.143051   
+2000-10-06  0.009816  0.009776  0.012046  0.009278   0.006760  0.046904   
+
+            Moving_Avg  
+Date                    
+2000-10-02         NaN  
+2000-10-03         NaN  
+2000-10-04         NaN  
+2000-10-05         NaN  
+2000-10-06       397.0  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Penjelasan Tentang NaN dan Moving Average</p>
+<ul class="simple">
+<li><p>NaN (Not a Number): Nilai NaN pada kolom Moving_Avg menunjukkan bahwa tidak ada cukup data untuk menghitung rata-rata bergerak pada hari-hari awal. Rata-rata bergerak 5-hari memerlukan data dari 5 hari sebelumnya, sehingga pada hari pertama hingga keempat, tidak ada nilai yang dapat dihitung, sehingga menghasilkan NaN.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membagi data menjadi data training dan testing (misalnya 80%-20%)</span>
+<span class="n">train_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>  <span class="c1"># Menghitung ukuran data pelatihan</span>
+<span class="n">train_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="n">train_size</span><span class="p">]</span>      <span class="c1"># Mengambil 80% pertama sebagai data pelatihan</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">train_size</span><span class="p">:]</span>        <span class="c1"># Mengambil sisa 20% sebagai data pengujian</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Training:&quot;</span><span class="p">,</span> <span class="n">train_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># Menampilkan bentuk data pelatihan</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data Testing:&quot;</span><span class="p">,</span> <span class="n">test_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>    <span class="c1"># Menampilkan bentuk data pengujian</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data Training: (3968,)
+Data Testing: (992,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Melihat data yang telah diproses</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                Open      High       Low     Close  Adj Close    Volume  \
+Date                                                                      
+2000-10-02  0.012270  0.012424  0.014953  0.011959   0.008713  0.058207   
+2000-10-03  0.011861  0.012016  0.013084  0.009897   0.007211  0.115757   
+2000-10-04  0.009816  0.009776  0.011215  0.009278   0.006760  0.206228   
+2000-10-05  0.008998  0.010183  0.012253  0.009897   0.007211  0.143051   
+2000-10-06  0.009816  0.009776  0.012046  0.009278   0.006760  0.046904   
+
+            Moving_Avg  
+Date                    
+2000-10-02         NaN  
+2000-10-03         NaN  
+2000-10-04         NaN  
+2000-10-05         NaN  
+2000-10-06       397.0  
+</pre></div>
+</div>
+</div>
+</div>
+<p>#Sliding Window</p>
+<p><strong>Sliding window</strong> adalah teknik yang digunakan dalam analisis data, terutama dalam konteks pemrosesan sinyal dan analisis deret waktu (time series). Konsep dasarnya adalah untuk mengambil potongan (window) dari data yang bergerak seiring waktu. Ini berguna untuk mengekstrak fitur dari data yang bersifat temporer atau berurutan.</p>
+</section>
+<section id="konsep-sliding-window">
+<h3>Konsep Sliding Window<a class="headerlink" href="#konsep-sliding-window" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Definisi</strong>:</p>
+<ul class="simple">
+<li><p>Sliding window adalah metode di mana sebuah “jendela” berukuran tetap bergerak sepanjang data. Dalam setiap posisi, window tersebut dapat mengambil subset data untuk analisis lebih lanjut.</p></li>
+</ul>
+</li>
+<li><p><strong>Ukuran Window</strong>:</p>
+<ul class="simple">
+<li><p>Ukuran window adalah jumlah data point yang akan dianalisis dalam satu waktu. Misalnya, jika ukuran window adalah 5, maka setiap analisis atau perhitungan akan dilakukan pada 5 data point berturut-turut.</p></li>
+</ul>
+</li>
+<li><p><strong>Pergerakan Window</strong>:</p>
+<ul class="simple">
+<li><p>Setelah analisis dilakukan pada posisi saat ini, window kemudian digeser ke posisi berikutnya. Ini bisa dilakukan dengan menggeser satu data point (stride = 1) atau lebih (stride &gt; 1), tergantung pada aplikasi.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="aplikasi-sliding-window">
+<h3>Aplikasi Sliding Window<a class="headerlink" href="#aplikasi-sliding-window" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Pengolahan Sinyal</strong>: Untuk menghaluskan sinyal atau menghitung rata-rata bergerak (moving average).</p></li>
+<li><p><strong>Analisis Data Waktu</strong>: Untuk mengekstrak fitur dari data deret waktu, seperti mean, variance, atau menghitung model prediksi.</p></li>
+<li><p><strong>Deteksi Anomali</strong>: Mengidentifikasi pola yang tidak biasa dalam data.</p></li>
+<li><p><strong>Model Machine Learning</strong>: Dalam pelatihan model, terutama untuk data yang memiliki sifat temporal, sliding window memungkinkan model untuk belajar dari pola dalam data yang berurutan.</p></li>
+</ol>
+</section>
+<section id="keuntungan-dan-kerugian">
+<h3>Keuntungan dan Kerugian<a class="headerlink" href="#keuntungan-dan-kerugian" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Keuntungan</strong>:</p>
+<ul>
+<li><p>Memungkinkan analisis yang berkelanjutan dan real-time.</p></li>
+<li><p>Menghasilkan fitur yang lebih informatif dengan mempertimbangkan konteks temporal.</p></li>
+</ul>
+</li>
+<li><p><strong>Kerugian</strong>:</p>
+<ul>
+<li><p>Memerlukan pengaturan parameter seperti ukuran window dan stride, yang dapat mempengaruhi hasil.</p></li>
+<li><p>Potensi kehilangan informasi di pinggiran jika tidak menggunakan teknik yang tepat.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Membaca data saham</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;icbp.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mengubah kolom Date menjadi format datetime dan set index Date</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Menggunakan kolom &#39;Close&#39; sebagai contoh untuk time series</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Parameter untuk sliding window</span>
+<span class="n">window_size</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Ukuran jendela</span>
+<span class="n">stride</span> <span class="o">=</span> <span class="mi">1</span>       <span class="c1"># Langkah penggeseran jendela</span>
+
+<span class="c1"># Membuat list untuk menyimpan fitur dan target</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">targets</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Sliding window</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">window_size</span><span class="p">):</span>
+    <span class="n">window</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span><span class="p">]</span>  <span class="c1"># Mengambil jendela</span>
+    <span class="n">features</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>            <span class="c1"># Menyimpan fitur</span>
+    <span class="n">targets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span><span class="p">])</span>  <span class="c1"># Target adalah harga berikutnya</span>
+
+<span class="c1"># Mengonversi menjadi DataFrame</span>
+<span class="n">features_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;Day_</span><span class="si">{</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">window_size</span><span class="p">)])</span>
+<span class="n">targets_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">targets</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Target&#39;</span><span class="p">])</span>
+
+<span class="c1"># Menggabungkan fitur dan target</span>
+<span class="n">sliding_window_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">features_df</span><span class="p">,</span> <span class="n">targets_df</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan hasil</span>
+
+<span class="n">sliding_window_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-532f7c1a-dd97-4676-ab6b-6edfea8b5ef1" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Day_1</th>
+      <th>Day_2</th>
+      <th>Day_3</th>
+      <th>Day_4</th>
+      <th>Day_5</th>
+      <th>Target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>420.0</td>
+      <td>395.0</td>
+      <td>387.5</td>
+      <td>395.0</td>
+      <td>387.5</td>
+      <td>377.5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>395.0</td>
+      <td>387.5</td>
+      <td>395.0</td>
+      <td>387.5</td>
+      <td>377.5</td>
+      <td>375.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>387.5</td>
+      <td>395.0</td>
+      <td>387.5</td>
+      <td>377.5</td>
+      <td>375.0</td>
+      <td>385.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>395.0</td>
+      <td>387.5</td>
+      <td>377.5</td>
+      <td>375.0</td>
+      <td>385.0</td>
+      <td>390.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>387.5</td>
+      <td>377.5</td>
+      <td>375.0</td>
+      <td>385.0</td>
+      <td>390.0</td>
+      <td>395.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-532f7c1a-dd97-4676-ab6b-6edfea8b5ef1')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-532f7c1a-dd97-4676-ab6b-6edfea8b5ef1 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-532f7c1a-dd97-4676-ab6b-6edfea8b5ef1');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-1170df50-6720-4200-952c-b2441919cece">
+  <button class="colab-df-quickchart" onclick="quickchart('df-1170df50-6720-4200-952c-b2441919cece')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-1170df50-6720-4200-952c-b2441919cece button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#prediksi model dengan logistic regression</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="c1"># Fungsi untuk membuat sliding window dan label</span>
+<span class="k">def</span> <span class="nf">create_sliding_window_with_labels</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">close_prices</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span>
+    <span class="n">windows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">close_prices</span><span class="p">)</span> <span class="o">-</span> <span class="n">window_size</span><span class="p">):</span>
+        <span class="n">windows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">close_prices</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">close_prices</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">close_prices</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+            <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">labels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">windows</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+
+<span class="c1"># Membaca data saham</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;icbp.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Memeriksa nilai yang hilang</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah nilai yang hilang di setiap kolom:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="c1"># Mengisi nilai NaN dengan rata-rata atau menghapus baris yang memiliki NaN</span>
+<span class="n">data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># atau data.dropna(inplace=True)</span>
+
+<span class="c1"># Membuat sliding window dan label dengan ukuran window 5</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">create_sliding_window_with_labels</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Membagi data menjadi training dan testing set (80% training, 20% testing)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Standardisasi data</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_train_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">X_test_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Melatih model Logistic Regression</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_scaled</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Melakukan prediksi pada data test</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_scaled</span><span class="p">)</span>
+
+<span class="c1"># Mengukur akurasi model</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Akurasi model: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan beberapa prediksi pertama</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Prediksi pertama vs Aktual:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Prediksi: </span><span class="si">{</span><span class="n">y_pred</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">, Aktual: </span><span class="si">{</span><span class="n">y_test</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah nilai yang hilang di setiap kolom:
+Open         70
+High         70
+Low          70
+Close        70
+Adj Close    70
+Volume       70
+dtype: int64
+Akurasi model: 0.62
+Prediksi pertama vs Aktual:
+Prediksi: 0, Aktual: 0
+Prediksi: 0, Aktual: 0
+Prediksi: 0, Aktual: 0
+Prediksi: 0, Aktual: 0
+Prediksi: 0, Aktual: 0
+Prediksi: 0, Aktual: 0
+Prediksi: 0, Aktual: 1
+Prediksi: 0, Aktual: 0
+Prediksi: 0, Aktual: 1
+Prediksi: 0, Aktual: 0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Prediksi menggunakan Logistic Regression</strong> adalah metode statistik yang digunakan untuk memodelkan hubungan antara satu atau lebih variabel independen dan variabel dependen biner (dua kelas). Logistic Regression sering digunakan dalam analisis klasifikasi untuk memprediksi kemungkinan terjadinya suatu peristiwa. Berikut adalah penjelasan lebih lanjut tentang Logistic Regression, cara kerjanya, dan aplikasinya.</p>
+</section>
+<section id="apa-itu-logistic-regression">
+<h3>Apa itu Logistic Regression?<a class="headerlink" href="#apa-itu-logistic-regression" title="Link to this heading">#</a></h3>
+<p>Logistic Regression adalah model regresi yang digunakan ketika variabel target (dependen) bersifat kategorikal. Ini paling umum digunakan untuk memprediksi dua kelas, misalnya:</p>
+<ul class="simple">
+<li><p>Ya/Tidak</p></li>
+<li><p>Sukses/Gagal</p></li>
+<li><p>Penyakit/Tidak Penyakit</p></li>
+</ul>
+<p>Model ini menghitung probabilitas bahwa suatu instance termasuk dalam kelas tertentu dan kemudian memutuskan kelas berdasarkan probabilitas tersebut.</p>
+</section>
+<section id="langkah-langkah-dalam-prediksi-menggunakan-logistic-regression">
+<h3>Langkah-langkah dalam Prediksi Menggunakan Logistic Regression<a class="headerlink" href="#langkah-langkah-dalam-prediksi-menggunakan-logistic-regression" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Persiapan Data</strong>:</p>
+<ul class="simple">
+<li><p>Kumpulkan data yang akan digunakan.</p></li>
+<li><p>Pisahkan data menjadi fitur (independen) dan label (dependen).</p></li>
+<li><p>Lakukan pra-pemrosesan data, seperti normalisasi atau encoding variabel kategorikal jika diperlukan.</p></li>
+</ul>
+</li>
+<li><p><strong>Membagi Data</strong>:</p>
+<ul class="simple">
+<li><p>Bagi dataset menjadi dua bagian: data pelatihan dan data pengujian.</p></li>
+</ul>
+</li>
+<li><p><strong>Membangun Model</strong>:</p>
+<ul class="simple">
+<li><p>Gunakan library seperti scikit-learn untuk membangun model Logistic Regression.</p></li>
+<li><p>Latih model menggunakan data pelatihan.</p></li>
+</ul>
+</li>
+<li><p><strong>Prediksi</strong>:</p>
+<ul class="simple">
+<li><p>Gunakan model yang dilatih untuk memprediksi kelas pada data pengujian.</p></li>
+<li><p>Hasil prediksi biasanya berupa probabilitas yang kemudian dikategorikan menjadi kelas.</p></li>
+</ul>
+</li>
+<li><p><strong>Evaluasi Model</strong>:</p>
+<ul class="simple">
+<li><p>Evaluasi hasil prediksi menggunakan metrik seperti akurasi, precision, recall, dan F1-score.</p></li>
+<li><p>Gunakan confusion matrix untuk memahami performa model.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="kelebihan-dan-kekurangan">
+<h3>Kelebihan dan Kekurangan<a class="headerlink" href="#kelebihan-dan-kekurangan" title="Link to this heading">#</a></h3>
+<section id="kelebihan">
+<h4>Kelebihan:<a class="headerlink" href="#kelebihan" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Sederhana dan Mudah Dipahami</strong>: Mudah diinterpretasikan dan digunakan.</p></li>
+<li><p><strong>Hasil Probabilitas</strong>: Memberikan output probabilitas untuk klasifikasi, yang berguna dalam banyak aplikasi.</p></li>
+<li><p><strong>Efisien untuk Klasifikasi Dua Kelas</strong>: Sangat efisien untuk model yang hanya memiliki dua kelas.</p></li>
+</ul>
+</section>
+<section id="kekurangan">
+<h4>Kekurangan:<a class="headerlink" href="#kekurangan" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Hanya untuk Klasifikasi Biner</strong>: Meski dapat diperluas untuk beberapa kelas, itu bisa jadi lebih kompleks.</p></li>
+<li><p><strong>Asumsi Linieritas</strong>: Model ini mengasumsikan hubungan linier antara fitur dan log-odds, yang mungkin tidak selalu benar.</p></li>
+<li><p><strong>Sensitif terhadap Outlier</strong>: Dapat dipengaruhi oleh nilai pencilan yang ekstrem.</p></li>
+</ul>
+</section>
+</section>
+<section id="aplikasi">
+<h3>Aplikasi<a class="headerlink" href="#aplikasi" title="Link to this heading">#</a></h3>
+<p>Logistic Regression banyak digunakan dalam berbagai bidang, termasuk:</p>
+<ul class="simple">
+<li><p><strong>Kedokteran</strong>: Untuk memprediksi kemungkinan penyakit berdasarkan gejala.</p></li>
+<li><p><strong>Pemasaran</strong>: Untuk memprediksi apakah seorang pelanggan akan membeli produk.</p></li>
+<li><p><strong>Keuangan</strong>: Untuk menentukan kemungkinan default pada pinjaman.</p></li>
+</ul>
+<p>Dengan menggunakan Logistic Regression, kita dapat membuat model yang kuat untuk memprediksi hasil berdasarkan data historis dan melakukan analisis yang mendalam.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#prediksi model dengan metode lstm</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">LSTM</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Membaca data saham</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;icbp.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mengubah kolom Date menjadi format datetime dan set index Date</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Mengisi nilai NaN dengan forward fill</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+
+<span class="c1"># Normalisasi data</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">MinMaxScaler</span><span class="p">(</span><span class="n">feature_range</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">scaled_data</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Membagi data menjadi training dan testing (80% training, 20% testing)</span>
+<span class="n">train_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scaled_data</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.8</span><span class="p">)</span>
+<span class="n">train_data</span> <span class="o">=</span> <span class="n">scaled_data</span><span class="p">[:</span><span class="n">train_size</span><span class="p">]</span>
+<span class="n">test_data</span> <span class="o">=</span> <span class="n">scaled_data</span><span class="p">[</span><span class="n">train_size</span><span class="p">:]</span>
+
+<span class="c1"># Fungsi untuk membuat dataset dengan sliding window</span>
+<span class="k">def</span> <span class="nf">create_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">window_size</span><span class="p">):</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">window_size</span><span class="p">):</span>
+        <span class="n">X</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:(</span><span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span><span class="p">),</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Membuat dataset</span>
+<span class="n">window_size</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">create_dataset</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">window_size</span><span class="p">)</span>
+<span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">create_dataset</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">window_size</span><span class="p">)</span>
+
+<span class="c1"># Mengubah bentuk input menjadi [samples, time steps, features]</span>
+<span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">X_test</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Membangun model LSTM</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># Output layer</span>
+
+<span class="c1"># Mengompilasi model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+
+<span class="c1"># Melatih model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+
+<span class="c1"># Melakukan prediksi</span>
+<span class="n">train_predict</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">test_predict</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Invers transformasi prediksi ke skala aslinya</span>
+<span class="n">train_predict</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">train_predict</span><span class="p">)</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">test_predict</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">test_predict</span><span class="p">)</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Visualisasi hasil prediksi</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">window_size</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">train_predict</span><span class="p">)</span> <span class="o">+</span> <span class="n">window_size</span><span class="p">],</span> <span class="n">train_predict</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prediksi Training&#39;</span><span class="p">)</span>
+
+<span class="c1"># Perbaiki index untuk test_predict</span>
+<span class="n">test_index_start</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_predict</span><span class="p">)</span> <span class="o">+</span> <span class="n">window_size</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">test_index_end</span> <span class="o">=</span> <span class="n">test_index_start</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_predict</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">test_index_start</span><span class="p">:</span><span class="n">test_index_end</span><span class="p">],</span> <span class="n">test_predict</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prediksi Testing&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data Aktual&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Prediksi Harga Saham Menggunakan LSTM&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Epoch 1/50
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.10/dist-packages/keras/src/layers/rnn/rnn.py:204: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">3s</span> 4ms/step - loss: 0.0145
+Epoch 2/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 6.4814e-04
+Epoch 3/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 6.2424e-04
+Epoch 4/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 5.3368e-04
+Epoch 5/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 4.8026e-04
+Epoch 6/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 4ms/step - loss: 4.7672e-04
+Epoch 7/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 6ms/step - loss: 4.5557e-04
+Epoch 8/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 7ms/step - loss: 5.0176e-04
+Epoch 9/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 4ms/step - loss: 4.5290e-04
+Epoch 10/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.8525e-04
+Epoch 11/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 4.4876e-04
+Epoch 12/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.7288e-04
+Epoch 13/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.7443e-04
+Epoch 14/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 4ms/step - loss: 4.3211e-04
+Epoch 15/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.6838e-04
+Epoch 16/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.1987e-04
+Epoch 17/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.4582e-04
+Epoch 18/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.2626e-04
+Epoch 19/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 4ms/step - loss: 3.1738e-04
+Epoch 20/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.2347e-04
+Epoch 21/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 4ms/step - loss: 3.6543e-04
+Epoch 22/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.3350e-04
+Epoch 23/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.3943e-04
+Epoch 24/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 4ms/step - loss: 3.4102e-04
+Epoch 25/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 6ms/step - loss: 3.0875e-04
+Epoch 26/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 8ms/step - loss: 3.2832e-04
+Epoch 27/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 7ms/step - loss: 3.4010e-04
+Epoch 28/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.2180e-04
+Epoch 29/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.1703e-04
+Epoch 30/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.1633e-04
+Epoch 31/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.3699e-04
+Epoch 32/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.9694e-04
+Epoch 33/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.1001e-04
+Epoch 34/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.5583e-04
+Epoch 35/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 4ms/step - loss: 3.5143e-04
+Epoch 36/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 2.9399e-04
+Epoch 37/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 4ms/step - loss: 3.1770e-04
+Epoch 38/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.1584e-04
+Epoch 39/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.1054e-04
+Epoch 40/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 4ms/step - loss: 2.9246e-04
+Epoch 41/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.7088e-04
+Epoch 42/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 4ms/step - loss: 3.0362e-04
+Epoch 43/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 6ms/step - loss: 3.3407e-04
+Epoch 44/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 7ms/step - loss: 3.0044e-04
+Epoch 45/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.5418e-04
+Epoch 46/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 2.8752e-04
+Epoch 47/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.0157e-04
+Epoch 48/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.1003e-04
+Epoch 49/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 5ms/step - loss: 3.1561e-04
+Epoch 50/50
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 4ms/step - loss: 3.0775e-04
+<span class=" -Color -Color-Bold">124/124</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">1s</span> 3ms/step
+<span class=" -Color -Color-Bold">31/31</span> <span class=" -Color -Color-Green">━━━━━━━━━━━━━━━━━━━━</span> <span class=" -Color -Color-Bold">0s</span> 2ms/step
+</pre></div>
+</div>
+<img alt="_images/002c431268ac9465db3d0f2959bfaec9d43194a98a04a3c1b2a7828b47aa516c.png" src="_images/002c431268ac9465db3d0f2959bfaec9d43194a98a04a3c1b2a7828b47aa516c.png" />
+</div>
+</div>
+<p><strong>Prediksi model dengan metode LSTM (Long Short-Term Memory)</strong> adalah teknik yang digunakan untuk memodelkan dan memprediksi data deret waktu (time series) atau urutan data (sequential data). LSTM adalah jenis jaringan saraf tiruan (neural network) yang dirancang khusus untuk mengatasi masalah pembelajaran jangka panjang dan memori yang sering terjadi pada model jaringan saraf tradisional, seperti RNN (Recurrent Neural Networks).</p>
+</section>
+<section id="apa-itu-lstm">
+<h3>Apa itu LSTM?<a class="headerlink" href="#apa-itu-lstm" title="Link to this heading">#</a></h3>
+<p>LSTM adalah arsitektur jaringan saraf yang memiliki kemampuan untuk mengingat informasi dalam waktu yang lebih lama. Ini sangat berguna untuk data urutan, seperti teks, suara, atau data deret waktu, di mana informasi penting dari langkah waktu sebelumnya mungkin mempengaruhi prediksi di langkah waktu selanjutnya.</p>
+</section>
+<section id="komponen-utama-lstm">
+<h3>Komponen Utama LSTM<a class="headerlink" href="#komponen-utama-lstm" title="Link to this heading">#</a></h3>
+<p>LSTM memiliki tiga komponen utama yang dikenal sebagai <strong>gerbang</strong> (gates):</p>
+<ol class="arabic simple">
+<li><p><strong>Gerbang Lupa (Forget Gate)</strong>:</p>
+<ul class="simple">
+<li><p>Memutuskan informasi mana yang akan dilupakan dari memori. Ini diatur oleh neuron yang menggunakan fungsi sigmoid, yang mengeluarkan nilai antara 0 dan 1.</p></li>
+<li><p>Jika output gerbang ini 0, berarti informasi tersebut akan dilupakan sepenuhnya; jika 1, informasi akan dipertahankan sepenuhnya.</p></li>
+</ul>
+</li>
+<li><p><strong>Gerbang Input (Input Gate)</strong>:</p>
+<ul class="simple">
+<li><p>Menentukan informasi baru yang akan disimpan dalam sel memori. Ini juga menggunakan fungsi sigmoid untuk menentukan nilai mana yang akan diperbarui.</p></li>
+</ul>
+</li>
+<li><p><strong>Gerbang Output (Output Gate)</strong>:</p>
+<ul class="simple">
+<li><p>Mengontrol informasi mana yang akan dikeluarkan dari sel memori. Ini menghasilkan output yang kemudian akan digunakan untuk prediksi.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="cara-kerja-lstm-dalam-prediksi">
+<h3>Cara Kerja LSTM dalam Prediksi<a class="headerlink" href="#cara-kerja-lstm-dalam-prediksi" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Input Data</strong>:</p>
+<ul class="simple">
+<li><p>Data urutan (misalnya, harga saham, cuaca, atau data sekuensial lainnya) diumpankan ke model LSTM.</p></li>
+</ul>
+</li>
+<li><p><strong>Proses Pembelajaran</strong>:</p>
+<ul class="simple">
+<li><p>Model LSTM dilatih dengan menggunakan data urutan untuk mempelajari pola dan hubungan dalam data. Proses ini melibatkan propagasi maju (forward propagation) dan pembaruan bobot (weight update) berdasarkan kesalahan prediksi.</p></li>
+</ul>
+</li>
+<li><p><strong>Memprediksi Output</strong>:</p>
+<ul class="simple">
+<li><p>Setelah model dilatih, ia dapat digunakan untuk memprediksi nilai berikutnya dalam urutan berdasarkan input sebelumnya.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="langkah-langkah-dalam-membangun-model-lstm">
+<h3>Langkah-langkah dalam Membangun Model LSTM<a class="headerlink" href="#langkah-langkah-dalam-membangun-model-lstm" title="Link to this heading">#</a></h3>
+<p>Berikut adalah langkah-langkah umum untuk membangun model LSTM untuk prediksi:</p>
+<ol class="arabic simple">
+<li><p><strong>Persiapan Data</strong>:</p>
+<ul class="simple">
+<li><p>Kumpulkan dan pra-proses data. Misalnya, mengonversi data menjadi format yang sesuai, menormalkan nilai, dan membuat sliding window untuk data deret waktu.</p></li>
+</ul>
+</li>
+<li><p><strong>Membagi Data</strong>:</p>
+<ul class="simple">
+<li><p>Bagi dataset menjadi data pelatihan dan data pengujian.</p></li>
+</ul>
+</li>
+<li><p><strong>Membangun Model LSTM</strong>:</p>
+<ul class="simple">
+<li><p>Gunakan library seperti Keras atau TensorFlow untuk membangun arsitektur model LSTM.</p></li>
+</ul>
+</li>
+<li><p><strong>Melatih Model</strong>:</p>
+<ul class="simple">
+<li><p>Latih model menggunakan data pelatihan. Selama proses ini, model belajar dari pola dalam data.</p></li>
+</ul>
+</li>
+<li><p><strong>Melakukan Prediksi</strong>:</p>
+<ul class="simple">
+<li><p>Gunakan model yang dilatih untuk memprediksi nilai pada data pengujian atau data baru.</p></li>
+</ul>
+</li>
+<li><p><strong>Evaluasi Model</strong>:</p>
+<ul class="simple">
+<li><p>Evaluasi hasil prediksi dengan menggunakan metrik seperti RMSE (Root Mean Squared Error) atau MAE (Mean Absolute Error).</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="kelebihan-dan-kekurangan-lstm">
+<h3>Kelebihan dan Kekurangan LSTM<a class="headerlink" href="#kelebihan-dan-kekurangan-lstm" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h4>Kelebihan:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Mengatasi Masalah Vanishing Gradient</strong>: LSTM dirancang untuk mengatasi masalah ini, sehingga lebih efektif dalam menangkap ketergantungan jangka panjang.</p></li>
+<li><p><strong>Fleksibilitas</strong>: Dapat digunakan untuk berbagai jenis data urutan, termasuk teks, suara, dan data deret waktu.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h4>Kekurangan:<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Kompleksitas Model</strong>: Memiliki lebih banyak parameter dibandingkan dengan model sederhana, yang dapat menyebabkan waktu pelatihan yang lebih lama.</p></li>
+<li><p><strong>Kebutuhan Data Besar</strong>: Memerlukan dataset yang cukup besar untuk melatih model dengan baik.</p></li>
+</ul>
+</section>
+</section>
+<section id="aplikasi-lstm">
+<h3>Aplikasi LSTM<a class="headerlink" href="#aplikasi-lstm" title="Link to this heading">#</a></h3>
+<p>LSTM banyak digunakan dalam berbagai bidang, seperti:</p>
+<ul class="simple">
+<li><p><strong>Prediksi Deret Waktu</strong>: Memprediksi harga saham, cuaca, atau tren penjualan.</p></li>
+<li><p><strong>Pemrosesan Bahasa Alami (NLP)</strong>: Untuk menerjemahkan teks, analisis sentimen, atau pengenalan suara.</p></li>
+<li><p><strong>Pengolahan Sinyal</strong>: Dalam analisis suara dan video.</p></li>
+</ul>
+<p>Dengan menggunakan LSTM, kita dapat membuat model yang dapat menangkap pola dan ketergantungan dalam data urutan untuk melakukan prediksi yang akurat.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#visualisasi sliding windows</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Fungsi untuk membuat sliding window</span>
+<span class="k">def</span> <span class="nf">create_sliding_window</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">6</span><span class="p">):</span>  <span class="c1"># Ubah window_size menjadi 5</span>
+    <span class="c1"># Mengambil data dari kolom &#39;Close&#39; saham</span>
+    <span class="n">close_prices</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Membuat sliding window menggunakan pandas rolling dan shifting</span>
+    <span class="n">sliding_windows</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">close_prices</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">window_size</span><span class="p">)])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="k">return</span> <span class="n">sliding_windows</span>
+
+<span class="c1"># Membaca data saham</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;icbp.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mengubah kolom Date menjadi format datetime dan set index Date</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Membuat sliding window dengan ukuran 5</span>
+<span class="n">sliding_windows</span> <span class="o">=</span> <span class="n">create_sliding_window</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Membuat figure dan axis untuk 5 subplots</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># Mengatur layout untuk 3x2 subplots</span>
+
+<span class="c1"># Menampilkan sliding windows pada setiap plot</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>  <span class="c1"># Menampilkan 5 sliding windows</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span>]  # Mengatur posisi subplot
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sliding_windows</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Sliding Window </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sliding Window </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Index&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Close Price&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Menampilkan keseluruhan plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c31b5d4d6b31b9ec8c684697db0a9218bb2a9b41f027925d5c20e24fc8fcc650.png" src="_images/c31b5d4d6b31b9ec8c684697db0a9218bb2a9b41f027925d5c20e24fc8fcc650.png" />
+</div>
+</div>
+<p>#Ensemble Bagging</p>
+<p><strong>Ensemble Bagging</strong> (Bootstrap Aggregating) adalah salah satu teknik dalam <em>ensemble learning</em> yang bertujuan untuk meningkatkan performa model prediktif dengan menggabungkan prediksi dari beberapa model yang berbeda, sering disebut sebagai “estimators” atau “base models.” Ide utama dari ensemble bagging adalah mengurangi varians model dan meningkatkan akurasi prediksi dengan membuat beberapa model yang berbeda dari dataset yang sama dan kemudian menggabungkan prediksi mereka.</p>
+</section>
+<section id="bagaimana-bagging-bekerja">
+<h3>Bagaimana Bagging Bekerja:<a class="headerlink" href="#bagaimana-bagging-bekerja" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Resampling Data dengan Bootstrap:</strong></p>
+<ul class="simple">
+<li><p>Dataset pelatihan asli di-<em>resample</em> beberapa kali menggunakan teknik bootstrap (sampling dengan penggantian). Ini berarti bahwa dari dataset pelatihan yang sama, beberapa subset data diambil secara acak dengan penggantian, memungkinkan beberapa poin data muncul lebih dari sekali dalam satu subset.</p></li>
+</ul>
+</li>
+<li><p><strong>Membangun Model pada Setiap Subset:</strong></p>
+<ul class="simple">
+<li><p>Untuk setiap subset data yang berbeda, sebuah model (misalnya, decision tree) dilatih. Model-model ini bisa sama atau berbeda tergantung pada implementasinya, tetapi dalam bagging klasik, model yang sama (biasanya decision tree) digunakan untuk setiap subset data.</p></li>
+</ul>
+</li>
+<li><p><strong>Menggabungkan Prediksi:</strong></p>
+<ul class="simple">
+<li><p>Setelah model-model individual dilatih, prediksi dari setiap model digabungkan untuk menghasilkan prediksi akhir. Cara menggabungkannya tergantung pada jenis tugas:</p>
+<ul>
+<li><p>Untuk <strong>regresi</strong>: menggunakan rata-rata (<em>average</em>) dari semua prediksi model.</p></li>
+<li><p>Untuk <strong>klasifikasi</strong>: menggunakan pemungutan suara mayoritas (<em>majority voting</em>).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="manfaat-bagging">
+<h3>Manfaat Bagging:<a class="headerlink" href="#manfaat-bagging" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Mengurangi Varians</strong>:</p>
+<ul class="simple">
+<li><p>Model tunggal, seperti decision tree, bisa sangat rentan terhadap variasi kecil dalam data (overfitting), menghasilkan model yang tidak stabil. Dengan bagging, varians model berkurang karena gabungan model lebih stabil daripada model individual.</p></li>
+</ul>
+</li>
+<li><p><strong>Meningkatkan Akurasi</strong>:</p>
+<ul class="simple">
+<li><p>Dengan menggabungkan prediksi dari beberapa model, akurasi prediksi dapat ditingkatkan dibandingkan dengan menggunakan satu model saja.</p></li>
+</ul>
+</li>
+<li><p><strong>Mencegah Overfitting</strong>:</p>
+<ul class="simple">
+<li><p>Bagging bekerja sangat baik dalam mencegah overfitting pada model yang rentan terhadap varian tinggi, seperti decision tree.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="contoh-algoritma-yang-menggunakan-bagging">
+<h3>Contoh Algoritma yang Menggunakan Bagging:<a class="headerlink" href="#contoh-algoritma-yang-menggunakan-bagging" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Random Forest</strong> adalah contoh paling populer dari bagging. Random forest menggunakan decision tree sebagai <em>base model</em>, tetapi juga menambahkan aspek acak dalam pemilihan fitur untuk setiap subset data, menjadikannya lebih kuat dalam menghindari overfitting.</p></li>
+</ul>
+</section>
+<section id="kapan-menggunakan-bagging">
+<h3>Kapan Menggunakan Bagging:<a class="headerlink" href="#kapan-menggunakan-bagging" title="Link to this heading">#</a></h3>
+<p>Bagging paling cocok digunakan ketika model yang digunakan rentan terhadap overfitting (misalnya decision tree) dan ketika data memiliki variabilitas yang tinggi. Dalam kasus di mana model overfitting terhadap data, bagging bisa sangat efektif untuk meningkatkan performa model.</p>
+</section>
+<section id="ilustrasi-sederhana-bagging">
+<h3>Ilustrasi Sederhana Bagging:<a class="headerlink" href="#ilustrasi-sederhana-bagging" title="Link to this heading">#</a></h3>
+<p>Misalkan kita memiliki data saham. Dengan menggunakan bagging, kita bisa:</p>
+<ul class="simple">
+<li><p>Membuat beberapa subset dari data harga saham menggunakan bootstrap.</p></li>
+<li><p>Melatih beberapa decision tree untuk memprediksi harga saham masa depan berdasarkan subset-subset ini.</p></li>
+<li><p>Menggabungkan prediksi dari semua decision tree tersebut untuk membuat prediksi akhir, misalnya dengan mengambil rata-rata dari semua prediksi model tersebut.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#prediksi menggunakan metode bagging regressor</span>
+<span class="c1"># Langkah 1: Impor library yang diperlukan</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># Langkah 2: Persiapan data</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Target&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Menggunakan harga penutupan berikutnya sebagai target</span>
+<span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Hapus baris dengan nilai NaN</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Close&#39;</span><span class="p">]]</span>  <span class="c1"># Ambil fitur harga penutupan</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Target&#39;</span><span class="p">]</span>  <span class="c1"># Ambil target</span>
+
+<span class="c1"># Memastikan panjang X dan y konsisten</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah sampel X:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah sampel y:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+
+<span class="c1"># Langkah 3: Standarisasi fitur</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Membagi data ke dalam train-test set</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Langkah 4: Membuat model Bagging Regressor</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">BaggingRegressor</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Langkah 5: Melakukan prediksi</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Menambahkan prediksi ke DataFrame asli untuk analisis lebih lanjut</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Prediksi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">y_pred</span><span class="p">):],</span> <span class="s1">&#39;Prediksi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_pred</span>  <span class="c1"># Mengisi kolom prediksi dengan hasil</span>
+
+<span class="c1"># Memeriksa DataFrame setelah menambahkan kolom prediksi</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data dengan kolom Prediksi:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span> <span class="s1">&#39;Prediksi&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># Menggunakan tail untuk melihat akhir DataFrame</span>
+
+<span class="c1"># Langkah 6: Visualisasi hasil</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Harga Sebenarnya&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Prediksi&#39;</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prediksi&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Prediksi Harga Saham ICBP dengan Bagging Regressor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tanggal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Harga (IDR)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah sampel X: 4843
+Jumlah sampel y: 4843
+Data dengan kolom Prediksi:
+              Close     Prediksi
+Date                           
+2020-06-19  8925.0   351.375105
+2020-06-22  9100.0  2537.526384
+2020-06-23  8925.0  9930.345238
+2020-06-24  9075.0  7482.500000
+2020-06-25  8975.0  2480.854167
+2020-06-26  9225.0  8738.734289
+2020-06-29  9400.0   466.334199
+2020-06-30  9350.0   699.454545
+2020-07-01  9200.0   550.416667
+2020-07-02  9550.0   410.995482
+</pre></div>
+</div>
+<img alt="_images/7e21b7ed6df9a810a57045546973f3b397de40405dbad4c920eea1e4901c6eff.png" src="_images/7e21b7ed6df9a810a57045546973f3b397de40405dbad4c920eea1e4901c6eff.png" />
+</div>
+</div>
+<p>Bagging Regressor adalah teknik ensemble yang digunakan untuk meningkatkan akurasi dan stabilitas model regresi dengan cara menggabungkan beberapa model yang lebih lemah (biasanya model regresi) untuk menghasilkan satu model yang lebih kuat. Berikut adalah penjelasan lebih rinci tentang cara kerja dan prinsip dasar dari Bagging Regressor:</p>
+</section>
+<section id="pengertian-bagging">
+<h3>1. <strong>Pengertian Bagging</strong><a class="headerlink" href="#pengertian-bagging" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Bagging</strong> (Bootstrap Aggregating) adalah metode yang digunakan untuk mengurangi variabilitas model dengan cara mengambil sampel data secara acak dari dataset asli, kemudian melatih model terpisah pada setiap sampel tersebut.</p></li>
+<li><p>Tujuan dari bagging adalah untuk meningkatkan ketahanan dan akurasi model dengan mengurangi overfitting yang sering terjadi pada model yang kompleks.</p></li>
+</ul>
+</section>
+<section id="cara-kerja-bagging-regressor">
+<h3>2. <strong>Cara Kerja Bagging Regressor</strong><a class="headerlink" href="#cara-kerja-bagging-regressor" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Bootstrap Sampling</strong>: Bagging dimulai dengan membuat beberapa subset dari data pelatihan dengan cara pengambilan sampel secara acak dengan pengembalian (bootstrap). Ini berarti bahwa satu data bisa muncul lebih dari sekali dalam satu subset.</p></li>
+<li><p><strong>Pelatihan Model</strong>: Model regresi yang sama (seperti Decision Tree, Linear Regression, dll.) dilatih secara terpisah pada masing-masing subset data.</p></li>
+<li><p><strong>Penggabungan Hasil</strong>: Setelah semua model dilatih, prediksi dari setiap model digabungkan. Untuk model regresi, ini biasanya dilakukan dengan menghitung rata-rata dari semua prediksi yang dihasilkan oleh model-model tersebut.</p></li>
+</ul>
+</section>
+<section id="keunggulan-bagging-regressor">
+<h3>3. <strong>Keunggulan Bagging Regressor</strong><a class="headerlink" href="#keunggulan-bagging-regressor" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Mengurangi Overfitting</strong>: Dengan menggabungkan beberapa model, bagging membantu mengurangi risiko overfitting, yang sering terjadi jika menggunakan model tunggal yang kompleks.</p></li>
+<li><p><strong>Meningkatkan Akurasi</strong>: Dengan memanfaatkan kekuatan dari beberapa model, Bagging Regressor seringkali menghasilkan prediksi yang lebih akurat dibandingkan dengan model individu.</p></li>
+<li><p><strong>Kestabilan</strong>: Model yang dihasilkan lebih stabil terhadap fluktuasi data pelatihan karena tidak bergantung pada satu set data saja.</p></li>
+</ul>
+</section>
+<section id="implementasi">
+<h3>4. <strong>Implementasi</strong><a class="headerlink" href="#implementasi" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Dalam praktiknya, Bagging Regressor dapat diimplementasikan menggunakan pustaka seperti Scikit-learn. Berikut adalah langkah-langkah dasar untuk menggunakannya:</p>
+<ol class="arabic simple">
+<li><p>Mengimpor library yang diperlukan (seperti <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, dan <code class="docutils literal notranslate"><span class="pre">BaggingRegressor</span></code> dari <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>).</p></li>
+<li><p>Membaca dan mempersiapkan data.</p></li>
+<li><p>Membagi data menjadi set pelatihan dan pengujian.</p></li>
+<li><p>Membuat dan melatih model <code class="docutils literal notranslate"><span class="pre">BaggingRegressor</span></code>.</p></li>
+<li><p>Melakukan prediksi dan mengevaluasi kinerja model.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h3>6. <strong>Kesimpulan</strong><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Bagging Regressor adalah metode yang kuat untuk meningkatkan akurasi model regresi dengan menggabungkan prediksi dari beberapa model yang lebih sederhana. Dengan pendekatan ini, kita dapat memperoleh hasil yang lebih baik, lebih stabil, dan lebih sedikit terpengaruh oleh noise dalam data.</p>
+<p>#RMSE</p>
+<p><strong>RMSE (Root Mean Square Error)</strong> adalah salah satu metrik evaluasi yang sering digunakan untuk mengukur seberapa baik model regresi dalam melakukan prediksi. RMSE menghitung akar kuadrat dari rata-rata kuadrat selisih antara nilai prediksi dengan nilai sebenarnya.</p>
+</section>
+<section id="mengapa-rmse-penting">
+<h3>Mengapa RMSE Penting?<a class="headerlink" href="#mengapa-rmse-penting" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>RMSE memberikan ukuran rata-rata seberapa jauh prediksi model dari nilai sebenarnya.</p></li>
+<li><p>Metrik ini sensitif terhadap outlier karena menggunakan kuadrat dari selisih. Artinya, kesalahan yang besar akan memberikan dampak lebih besar pada hasil RMSE.</p></li>
+<li><p>Semakin kecil nilai RMSE, semakin baik performa model, karena menunjukkan bahwa prediksi model semakin dekat dengan nilai sebenarnya.</p></li>
+</ul>
+</section>
+<section id="interpretasi">
+<h3>Interpretasi:<a class="headerlink" href="#interpretasi" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>RMSE rendah</strong>: Prediksi model sangat mendekati nilai sebenarnya.</p></li>
+<li><p><strong>RMSE tinggi</strong>: Prediksi model jauh dari nilai sebenarnya.</p></li>
+</ul>
+<p>RMSE sering digunakan dalam banyak aplikasi regresi, seperti prediksi harga saham, suhu, permintaan produk, dll., untuk mengevaluasi akurasi model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#RMSE</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+
+<span class="c1"># Langkah 1: Membaca data saham</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;icbp.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Langkah 2: Mengonversi kolom &#39;Date&#39; menjadi format datetime dan menyeting index</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Langkah 3: Menyiapkan data untuk model</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Target&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Menggunakan harga penutupan berikutnya sebagai target</span>
+<span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Hapus baris dengan nilai NaN yang mungkin muncul karena penggeseran</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Close&#39;</span><span class="p">]]</span>  <span class="c1"># Ambil fitur harga penutupan</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Target&#39;</span><span class="p">]</span>  <span class="c1"># Ambil target</span>
+
+<span class="c1"># Standarisasi fitur</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Membagi data ke dalam train-test set</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_scaled</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Langkah 4: Membuat model Bagging Regressor</span>
+<span class="n">base_estimator</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="c1"># Membuat ensemble Bagging Regressor</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">BaggingRegressor</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">base_estimator</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Langkah 5: Melakukan prediksi</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Langkah 6: Menghitung RMSE</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE dari model Bagging Regressor: </span><span class="si">{</span><span class="n">rmse</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMSE dari model Bagging Regressor: 104.4830
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Baca file CSV</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;icbp.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Tampilkan jumlah baris dan kolom</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah baris: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah kolom: </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah baris: 4960
+Jumlah kolom: 7
+</pre></div>
+</div>
+</div>
+</div>
+<p>kolom-kolom yang terdapat dalam file <code class="docutils literal notranslate"><span class="pre">icbp.csv</span></code>:</p>
+<ol class="arabic simple">
+<li><p><strong>Date</strong>: Tanggal dari data saham, dalam format bulan/hari/tahun (misal: <code class="docutils literal notranslate"><span class="pre">10/2/2000</span></code>).</p></li>
+<li><p><strong>Open</strong>: Harga pembukaan saham pada hari tersebut.</p></li>
+<li><p><strong>High</strong>: Harga tertinggi yang dicapai saham pada hari tersebut.</p></li>
+<li><p><strong>Low</strong>: Harga terendah yang dicapai saham pada hari tersebut.</p></li>
+<li><p><strong>Close</strong>: Harga penutupan saham pada hari tersebut.</p></li>
+<li><p><strong>Adj Close</strong>: Harga penutupan yang disesuaikan (adjusted closing price), yang memperhitungkan faktor seperti dividen atau pemecahan saham.</p></li>
+<li><p><strong>Volume</strong>: Jumlah saham yang diperdagangkan pada hari tersebut.</p></li>
+</ol>
+<p>#Data Supervice</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load the data</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;icbp.csv&#39;</span>  <span class="c1"># Ganti dengan path file Anda</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="c1"># Handle missing values by filling only numeric columns with the mean</span>
+<span class="n">numeric_cols</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;float64&#39;</span><span class="p">,</span> <span class="s1">&#39;int64&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">data</span><span class="p">[</span><span class="n">numeric_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">numeric_cols</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">numeric_cols</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+<span class="c1"># Define features (X) and label (Y)</span>
+<span class="n">features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span> <span class="s1">&#39;High&#39;</span><span class="p">,</span> <span class="s1">&#39;Low&#39;</span><span class="p">,</span> <span class="s1">&#39;Volume&#39;</span><span class="p">]</span>
+<span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Close&#39;</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>
+
+<span class="c1"># Combine features and label into a supervised dataset</span>
+<span class="n">supervised_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Save the supervised dataset to a new CSV file</span>
+<span class="n">output_path</span> <span class="o">=</span> <span class="s1">&#39;supervised_icbp.csv&#39;</span>  <span class="c1"># Ganti nama atau lokasi file jika perlu</span>
+<span class="n">supervised_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Supervised dataset saved to: </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Supervised dataset saved to: supervised_icbp.csv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membaca data saham</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;supervised_icbp.csv&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Open   High    Low       Volume  Close
+0  425.0  427.5  417.5   40281000.0  420.0
+1  420.0  422.5  395.0   80108000.0  395.0
+2  395.0  395.0  372.5  142717000.0  387.5
+3  385.0  400.0  385.0   98996000.0  395.0
+4  395.0  395.0  382.5   32459000.0  387.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>link Deploy : <a class="reference external" href="https://huggingface.co/spaces/22-065/proyeksainsdata">https://huggingface.co/spaces/22-065/proyeksainsdata</a></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tugas1_LaporanMemahamiBisnis.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">BAB I PENDAHULUAN</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan">Tujuan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumusan-masalah">Rumusan Masalah</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat">Manfaat</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kesimpulan">Kesimpulan:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan">Penjelasan:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Kesimpulan:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-grafik">Penjelasan Grafik:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-dari-grafik">Analisis dari Grafik:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagian-bagian-box-plot">Bagian-Bagian Box Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-box-plot">Kelebihan Box Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep-sliding-window">Konsep Sliding Window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-sliding-window">Aplikasi Sliding Window</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keuntungan-dan-kerugian">Keuntungan dan Kerugian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-logistic-regression">Apa itu Logistic Regression?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-dalam-prediksi-menggunakan-logistic-regression">Langkah-langkah dalam Prediksi Menggunakan Logistic Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-dan-kekurangan">Kelebihan dan Kekurangan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan">Kelebihan:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#kekurangan">Kekurangan:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi">Aplikasi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-lstm">Apa itu LSTM?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komponen-utama-lstm">Komponen Utama LSTM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-lstm-dalam-prediksi">Cara Kerja LSTM dalam Prediksi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-dalam-membangun-model-lstm">Langkah-langkah dalam Membangun Model LSTM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kelebihan-dan-kekurangan-lstm">Kelebihan dan Kekurangan LSTM</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Kelebihan:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Kekurangan:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-lstm">Aplikasi LSTM</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagaimana-bagging-bekerja">Bagaimana Bagging Bekerja:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manfaat-bagging">Manfaat Bagging:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-algoritma-yang-menggunakan-bagging">Contoh Algoritma yang Menggunakan Bagging:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kapan-menggunakan-bagging">Kapan Menggunakan Bagging:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ilustrasi-sederhana-bagging">Ilustrasi Sederhana Bagging:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-bagging">1. <strong>Pengertian Bagging</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-kerja-bagging-regressor">2. <strong>Cara Kerja Bagging Regressor</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keunggulan-bagging-regressor">3. <strong>Keunggulan Bagging Regressor</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi">4. <strong>Implementasi</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">6. <strong>Kesimpulan</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mengapa-rmse-penting">Mengapa RMSE Penting?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi">Interpretasi:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
